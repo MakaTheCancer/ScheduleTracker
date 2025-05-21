@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\bellIcon.png" />
+    <None Remove="Assets\calendarIcon.png" />
+    <None Remove="Assets\DailyRoutineTrackerAndReminderIcon.png" />
+    <None Remove="Assets\settingsIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScheduleTracker.Domain\ScheduleTracker.Domain.csproj" />
+    <ProjectReference Include="..\ScheduleTracker.EntityFamework\ScheduleTracker.EntityFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="api\auth\logIn\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\bellIcon.png" />
+    <Resource Include="Assets\calendarIcon.png" />
+    <Resource Include="Assets\DailyRoutineTrackerAndReminderIcon.png" />
+    <Resource Include="Assets\settingsIcon.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+@ScheduleTracker.AuthApi_HostAddress = http://localhost:5226
+
+GET {{ScheduleTracker.AuthApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

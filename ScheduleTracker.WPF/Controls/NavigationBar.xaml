@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="ScheduleTracker.WPF.Controls.NavigationBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScheduleTracker.WPF.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Calendar" Grid.Column="1" Style="{StaticResource LightBottomShadowButtonStyle}" Width="40" Height="40" Background="White" BorderBrush="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Click="ClickCalendar">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+                <Image Source="/Assets/calendarIcon.png" Width="24" Height="24"/>
+            </Button>
+
+            <Button x:Name="Reminder" Style="{StaticResource LightBottomShadowButtonStyle}" Width="40" Height="40" Background="White" BorderBrush="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Margin="0,10,0,0" Click="ClickReminder">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+                <Image Source="/Assets/BellIcon.png" Width="24" Height="24"/>
+            </Button>
+
+
+
+            <Button x:Name="Settings" Style="{StaticResource LightBottomShadowButtonStyle}" Grid.Column="3" Width="40" Height="40" Background="White" BorderBrush="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Click="ClickSettings">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+                <Image Source="/Assets/settingsIcon.png" Width="24" Height="24"/>
+            </Button>
+
+            <Canvas Grid.Row="1">
+                <StackPanel Canvas.Left="10" Canvas.Top="20">
+                    <Grid Width="100" Height="100" Margin="0,0,0,10">
+                        <Ellipse Stroke="Blue" StrokeThickness="2" Fill="Transparent"/>
+
+                        <Image x:Name="AvatarImage" Width="100" Height="100" Stretch="Fill">
+                            <Image.Clip>
+                                <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                            </Image.Clip>
+                        </Image>
+                    </Grid>
+
+                    <Button x:Name="UploadPfp" Content="Upload Profile Picture" Click="ClickUploadPfp"/>
+                </StackPanel>
+            </Canvas>
+
+
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="141,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Hello," VerticalAlignment="Top"/>
+        <TextBlock x:Name="Username" HorizontalAlignment="Left" Margin="141,26,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+    </Grid>
+</UserControl>
